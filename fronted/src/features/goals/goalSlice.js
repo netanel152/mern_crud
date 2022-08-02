@@ -95,12 +95,12 @@ export const goalSlice = createSlice({
         state.isSuccess = true;
         state.goals = action.payload;
       })
-      .addCase(deleteGoal.rejected, (state, action) => {
+      .addCase(getGoals.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
       })
-      .addCase(getGoals.pending, (state) => {
+      .addCase(deleteGoal.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(deleteGoal.fulfilled, (state, action) => {
